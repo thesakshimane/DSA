@@ -151,7 +151,7 @@ public:
         nn->data = x;
         nn->link = NULL;
 
-        if (p == 1) // Insert at the beginning
+        if (p == 1) // Insert at the beginni
         {
             nn->link = head;
             head = nn;
