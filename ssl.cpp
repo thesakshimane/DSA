@@ -251,6 +251,6 @@ int main()
     SSL lst;
     lst.create();
     lst.display();
-    lst.insert_pos(3, 1);
+    lst.insert_front(10);
     lst.display();
 }
