@@ -18,6 +18,14 @@ public:
         int n;
         cout << "Enter the size of the linked list: ";
         cin >> n;
+
+        while (head != NULL)
+        {
+            node *temp = head;
+            head = head->link;
+            delete temp;
+        }
+
         node *temp;
         for (int i = 0; i < n; i++)
         {
@@ -31,8 +39,11 @@ public:
                 temp = nn;
                 continue;
             }
-            temp->link = nn;
-            temp = nn;
+            else
+            {
+                temp->link = nn;
+                temp = nn;
+            }
         }
     }
 
