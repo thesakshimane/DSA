@@ -244,13 +244,51 @@ public:
             cout << x << " not found in the list." << endl;
         }
     }
-};
+    
+    void reverse()
+    {   
+        node *prev = NULL;
+        node *temp = head;
+        node *next = NULL;
+        while(temp != NULL)
+        {
+            next = temp->link;
+            temp->link = prev;
+            prev = temp;
+            temp = next;
+        }
+        head = prev;
+    }
+    
+    int sum_of_sublist()
+    {
+        node *temp = head;
+        int count = 0;
+        int sum = 0;
+        int i, j;
+        cout << "Enter the start of the sublist: ";
+        cin >> i;
+        cout << "Enter the end of the sublist: ";
+        cin >> i;
+        while (temp != NULL)
+        {
+            if (count >= i)
+            {
+                sum = sum + (temp->data);
+            } else if (count < j)
+            {
+                break;
+            }
+            count++;
+            temp = temp->link;
+        }
+        return sum;
+    }
+}; 
 
 int main()
 {
     SSL lst;
     lst.create();
-    lst.display();
-    lst.insert_front(10);
     lst.display();
 }
